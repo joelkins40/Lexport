@@ -31,12 +31,18 @@ public class Pn_Importar_Nomina extends javax.swing.JPanel {
 
         jSeparator6 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         t_ruta = new javax.swing.JTextField();
-        jSeparator2 = new javax.swing.JSeparator();
-        bt_importar = new Utilerias.RSButtonMetro();
-        bt_examinar = new Utilerias.RSButtonMetro();
+        jTextField1 = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jPanel2 = new javax.swing.JPanel();
 
         jSeparator6.setBackground(new java.awt.Color(128, 128, 131));
 
@@ -50,12 +56,15 @@ public class Pn_Importar_Nomina extends javax.swing.JPanel {
         jLabel8.setText("Módulo de Importación");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 860, -1));
 
+        jSeparator2.setBackground(new java.awt.Color(128, 128, 131));
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 1040, 10));
+
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(97, 212, 195), 3));
 
         jLabel21.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(128, 128, 131));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel21.setText("Dirección del Archivo");
+        jLabel21.setText("Semana");
 
         t_ruta.setForeground(new java.awt.Color(153, 153, 153));
         t_ruta.setBorder(null);
@@ -81,6 +90,8 @@ public class Pn_Importar_Nomina extends javax.swing.JPanel {
             }
         });
 
+        jTextField1.setText("jTextField1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -88,7 +99,9 @@ public class Pn_Importar_Nomina extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(t_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
         );
@@ -98,69 +111,65 @@ public class Pn_Importar_Nomina extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
-                    .addComponent(t_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(t_ruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 400, 70));
+        jLabel1.setText("Desde");
 
-        jSeparator2.setBackground(new java.awt.Color(128, 128, 131));
-        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 1040, 10));
+        jLabel2.setText("Hasta");
 
-        bt_importar.setBackground(new java.awt.Color(97, 212, 195));
-        bt_importar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        bt_importar.setForeground(new java.awt.Color(255, 255, 255));
-        bt_importar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plus24x24.png"))); // NOI18N
-        bt_importar.setText("Importar");
-        bt_importar.setColorHover(new java.awt.Color(128, 128, 131));
-        bt_importar.setColorNormal(new java.awt.Color(97, 212, 195));
-        bt_importar.setColorTextHover(new java.awt.Color(102, 255, 255));
-        bt_importar.setColorTextNormal(new java.awt.Color(255, 255, 255));
-        bt_importar.setColorTextPressed(new java.awt.Color(255, 255, 255));
-        bt_importar.setIconTextGap(10);
-        bt_importar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_importarMouseClicked(evt);
-            }
-        });
-        bt_importar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_importarActionPerformed(evt);
-            }
-        });
-        add(bt_importar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, 160, -1));
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(186, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(325, Short.MAX_VALUE))
+        );
 
-        bt_examinar.setBackground(new java.awt.Color(97, 212, 195));
-        bt_examinar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        bt_examinar.setForeground(new java.awt.Color(255, 255, 255));
-        bt_examinar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/search.png"))); // NOI18N
-        bt_examinar.setText("Examinar");
-        bt_examinar.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        bt_examinar.setColorHover(new java.awt.Color(128, 128, 131));
-        bt_examinar.setColorNormal(new java.awt.Color(97, 212, 195));
-        bt_examinar.setColorTextHover(new java.awt.Color(153, 255, 255));
-        bt_examinar.setColorTextNormal(new java.awt.Color(255, 255, 255));
-        bt_examinar.setColorTextPressed(new java.awt.Color(255, 255, 255));
-        bt_examinar.setIconTextGap(10);
-        bt_examinar.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                bt_examinarFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                bt_examinarFocusLost(evt);
-            }
-        });
-        bt_examinar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_examinarMouseClicked(evt);
-            }
-        });
-        bt_examinar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_examinarActionPerformed(evt);
-            }
-        });
-        add(bt_examinar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 160, -1));
+        jTabbedPane1.addTab("tab2", jPanel3);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1005, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 422, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab1", jPanel2);
+
+        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1010, 450));
     }// </editor-fold>//GEN-END:initComponents
 
     private void t_rutaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_t_rutaFocusLost
@@ -180,46 +189,26 @@ public class Pn_Importar_Nomina extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_t_rutaActionPerformed
 
-    private void bt_importarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_importarActionPerformed
-       
-    }//GEN-LAST:event_bt_importarActionPerformed
-
     private void t_rutaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t_rutaKeyTyped
       
     }//GEN-LAST:event_t_rutaKeyTyped
 
-    private void bt_examinarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_bt_examinarFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bt_examinarFocusGained
-
-    private void bt_examinarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_bt_examinarFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bt_examinarFocusLost
-
-    private void bt_examinarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_examinarActionPerformed
-      
-    }//GEN-LAST:event_bt_examinarActionPerformed
-
-    private void bt_examinarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_examinarMouseClicked
-        // TODO add your handling code here:
-        bt_examinar.setEnabled(false);
-    }//GEN-LAST:event_bt_examinarMouseClicked
-
-    private void bt_importarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_importarMouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_bt_importarMouseClicked
-
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Utilerias.RSButtonMetro bt_examinar;
-    private Utilerias.RSButtonMetro bt_importar;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField t_ruta;
     // End of variables declaration//GEN-END:variables
 
