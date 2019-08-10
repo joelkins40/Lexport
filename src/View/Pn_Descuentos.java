@@ -6,6 +6,8 @@
 package View;
 
 import Controller.CargoController;
+import Controller.DescuentoController;
+import Controller.ExtrasController;
 import Utilerias.CambiaPanel;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,7 +22,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Pn_Descuentos extends javax.swing.JPanel {
 
-    CargoController cc = new CargoController();
+    
+    DescuentoController cc = new DescuentoController();
     String accion;
     int id;
     String descripcion;
@@ -40,7 +43,7 @@ public class Pn_Descuentos extends javax.swing.JPanel {
     }
 
     public void cargarTabla() {
-        DefaultTableModel tb = cc.tablaCargos();
+        DefaultTableModel tb = cc.tablaDescuento();
         jt_Extras.setModel(tb);
     }
 

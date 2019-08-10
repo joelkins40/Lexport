@@ -633,13 +633,14 @@ public void RowApariencia(){
             capacidad = Integer.parseInt(t_numtrabajadores.getText());
             //accion = "I";
             dc.guardar(accion, id, area, capacidad);
-            cargarTabla();
+            
             limpiarCampos();
 
             lb_errorCampos.setText("");
 
             bloquearComponentes();
             limpiarCampos();
+            cargarTabla();
 
             bt_guardar.setText("Guardar");
         }

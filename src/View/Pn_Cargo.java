@@ -283,6 +283,11 @@ public class Pn_Cargo extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jt_cargos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_cargosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jt_cargos);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 520, 90));
@@ -483,13 +488,7 @@ public class Pn_Cargo extends javax.swing.JPanel {
     }//GEN-LAST:event_bt_nuevoMouseClicked
 
     private void bt_agregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregarMouseClicked
-        int filasel = jt_cargos.getSelectedRow();
-        id = Integer.parseInt(jt_cargos.getValueAt(filasel, 0).toString());
-        descripcion = jt_cargos.getValueAt(filasel, 1).toString();
-        t_cargo.setText(descripcion);
-        accion = "M";
-        bt_agregar.setText("Modificar");
-        desbloquearComponentes();
+        
 // TODO add your handling code here:
 
 
@@ -526,6 +525,16 @@ public class Pn_Cargo extends javax.swing.JPanel {
         t_empleado.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_t_empleadoActionPerformed
+
+    private void jt_cargosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_cargosMouseClicked
+int filasel = jt_cargos.getSelectedRow();
+        id = Integer.parseInt(jt_cargos.getValueAt(filasel, 0).toString());
+        descripcion = jt_cargos.getValueAt(filasel, 1).toString();
+        t_cargo.setText(descripcion);
+        accion = "M";
+        bt_agregar.setText("Modificar");
+        desbloquearComponentes();        // TODO add your handling code here:
+    }//GEN-LAST:event_jt_cargosMouseClicked
 
     public void RowApariencia() {
         jt_cargos.setFocusable(false);

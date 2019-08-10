@@ -6,6 +6,7 @@
 package View;
 
 import Controller.CargoController;
+import Controller.ExtrasController;
 import Utilerias.CambiaPanel;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Pn_Extras extends javax.swing.JPanel {
 
-    CargoController cc = new CargoController();
+  ExtrasController cc = new ExtrasController();
     String accion;
     int id;
     String descripcion;
@@ -40,7 +41,7 @@ public class Pn_Extras extends javax.swing.JPanel {
     }
 
     public void cargarTabla() {
-        DefaultTableModel tb = cc.tablaCargos();
+        DefaultTableModel tb = cc.tablaExtras();
         jt_Extras.setModel(tb);
     }
 
@@ -343,6 +344,11 @@ public class Pn_Extras extends javax.swing.JPanel {
                 jt_ExtrasFocusGained(evt);
             }
         });
+        jt_Extras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_ExtrasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jt_Extras);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 470, 90));
@@ -481,13 +487,7 @@ public class Pn_Extras extends javax.swing.JPanel {
     }//GEN-LAST:event_bt_nuevoMouseClicked
 
     private void bt_agregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregarMouseClicked
-        int filasel = jt_Extras.getSelectedRow();
-        id = Integer.parseInt(jt_Extras.getValueAt(filasel, 0).toString());
-        descripcion = jt_Extras.getValueAt(filasel, 1).toString();
-        t_extra.setText(descripcion);
-        accion = "M";
-        bt_agregar.setText("Modificar");
-        desbloquearComponentes();
+       
 // TODO add your handling code here:
 
 
@@ -505,6 +505,8 @@ public class Pn_Extras extends javax.swing.JPanel {
     }//GEN-LAST:event_bt_eliminarMouseClicked
 
     private void jt_ExtrasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jt_ExtrasFocusGained
+
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jt_ExtrasFocusGained
 
@@ -528,6 +530,16 @@ public class Pn_Extras extends javax.swing.JPanel {
         t_empleado.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_t_empleadoActionPerformed
+
+    private void jt_ExtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_ExtrasMouseClicked
+int filasel = jt_Extras.getSelectedRow();
+        id = Integer.parseInt(jt_Extras.getValueAt(filasel, 0).toString());
+        descripcion = jt_Extras.getValueAt(filasel, 1).toString();
+        t_extra.setText(descripcion);
+        accion = "M";
+        bt_agregar.setText("Modificar");
+        desbloquearComponentes();        // TODO add your handling code here:
+    }//GEN-LAST:event_jt_ExtrasMouseClicked
 
     public void RowApariencia() {
         jt_Extras.setFocusable(false);
