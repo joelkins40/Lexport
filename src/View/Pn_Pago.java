@@ -49,11 +49,12 @@ public class Pn_Pago extends javax.swing.JPanel {
          bloquearComponentes();
          ComponenteNoEditable();
 
-         cargar_tabla();
+          cargar_tabla();
     }
     public void cargar_tabla(){
         DefaultTableModel md=pc.tablapago();
-        jt_empleados.setModel(md);       
+        jt_empleados.setModel(md); 
+        
     }
     public void bloquearComponentes() {
         t_empleado.setEnabled(false);
